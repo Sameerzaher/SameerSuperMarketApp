@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SameerSuperMarketApp.iml" filepath="$PROJECT_DIR$/.idea/SameerSuperMarketApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SameerSuperMarket.iml" filepath="$PROJECT_DIR$/.idea/modules/SameerSuperMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SameerSuperMarket.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SameerSuperMarket.app.iml" />
     </modules>
   </component>
 </project>

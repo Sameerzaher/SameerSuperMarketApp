@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -163,21 +164,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       // changeProfileImage.setOnClickListener(new View.OnClickListener() {
-            //@Override
-           // public void onClick(View v) {
+
+        changeProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 // open gallery
-               // Intent i = new Intent(v.getContext(),EditProfile.class);
-               // i.putExtra("fullName",fullName.getText().toString());
-               // i.putExtra("email",email.getText().toString());
-               // i.putExtra("phone",phone.getText().toString());
-              //  startActivity(i);
+                Intent i = new Intent(v.getContext(),EditProfile.class);
+                i.putExtra("fullName",fullName.getText().toString());
+                i.putExtra("email",email.getText().toString());
+                i.putExtra("phone",phone.getText().toString());
+                startActivity(i);
 //
 
-         //   }
-      //  });
+            }
+        });
 
 
     }
+
+
+
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        finish();
+    }
+
 
 }
