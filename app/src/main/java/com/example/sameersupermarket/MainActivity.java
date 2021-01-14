@@ -1,6 +1,5 @@
 package com.example.sameersupermarket;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +23,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -37,6 +38,8 @@ import com.google.firebase.storage.StorageReference;
 import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
     private static final int GALLERY_INTENT_CODE = 1023 ;
     TextView fullName,email,phone,verifyMsg;
     FirebaseAuth fAuth;
@@ -164,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         changeProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,17 +176,9 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("email",email.getText().toString());
                 i.putExtra("phone",phone.getText().toString());
                 startActivity(i);
-//
-
             }
         });
-
-
     }
-
-
-
-
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();//logout
         startActivity(new Intent(getApplicationContext(),Login.class));
