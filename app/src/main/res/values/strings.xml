@@ -13,4 +13,14 @@
     <string name="create_new_account">Create New account</string>
     <string name="allready_registered_login_here">Allready Registered ? login here</string>
     <string name="register">Register</string>
+    <string name="your_name">Your Name</string>
+    <string name="save">Save</string>
+    <string name="your_email_address">Your Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="change_profile">Change Profile</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+
+
 </resources>
